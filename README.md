@@ -2,8 +2,6 @@
 
 A Python implementation of the Ihara-Grubb (IG) Net Transformation algorithm for visualizing network topology by transforming physical distances into virtual distances that account for network latency and resistance.
 
-## Overview
-
 The Ihara-Grubb transformation is a mathematical approach to network visualization that maps physical geographic distances between network nodes onto a virtual space where distances are modulated by network performance characteristics. This transformation provides insights into the "virtual effort" required to traverse network paths, accounting for both physical separation and network latency.
 
 ## Mathematical Foundation
@@ -29,37 +27,6 @@ Where:
 - **IG Factor = 2.0**: Network latency doubles the effective distance (e.g., 1000km physical distance becomes 2000km virtual distance)
 
 The transformation effectively creates a "virtual terrain" where high-latency connections appear as longer distances, making it easier to identify network bottlenecks and understand the true cost of network traversal.
-
-## Real-World Applications
-
-### Network Topology Analysis
-
-The IG transformation helps network engineers and researchers visualize:
-- **Bottleneck Identification**: High-latency paths appear as longer virtual distances
-- **Route Optimization**: Compare virtual distances to find optimal network paths
-- **Geographic vs. Network Distance**: Understand when physical proximity doesn't correlate with network performance
-- **CDN Placement**: Evaluate optimal locations for content delivery nodes
-
-### Distributed Systems Design
-
-- **Data Center Placement**: Visualize the virtual effort required for inter-datacenter communication
-- **Replication Strategy**: Understand the cost of maintaining consistency across geographically distributed nodes
-- **Load Balancing**: Factor in network resistance when distributing workloads
-
-### Research Applications
-
-- **Network Science**: Study the relationship between physical and virtual network topologies
-- **Cybersecurity**: Identify network paths that may be vulnerable due to high latency
-- **Telecommunications**: Plan infrastructure investments based on virtual distance metrics
-
-## Features
-
-- **Automatic Location Detection**: Uses Geo-IP services to automatically detect user location
-- **Live Latency Measurement**: Measures real-time network latency using system ping commands
-- **Cross-Platform Support**: Works on Windows, Linux, and macOS
-- **Interactive Visualization**: Generates matplotlib visualizations showing nodes, connections, and IG distances
-- **Multiple Geo-IP Services**: Falls back to alternative services if primary service fails
-- **Comprehensive Logging**: Detailed logging for debugging and analysis
 
 ## Installation
 
@@ -327,18 +294,3 @@ The Ihara-Grubb transformation is based on concepts from:
 ## License
 
 See the main project LICENSE file for license information.
-
-## Example Output
-
-When running the script, you'll see:
-
-```
-Path: My Console (User) <-> Cloudflare DNS (Global)
-  > Physical Dist (KM): 4.23 km
-  > Worst Latency: 12.5ms
-  > IG Factor (Terrain Multiplier): 1.13x
-  > IG Virtual Effort (Distance): 4.78 units
-```
-
-The visualization will display nodes and connections with IG effort values, helping you understand the virtual network topology.
-
