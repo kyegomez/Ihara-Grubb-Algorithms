@@ -291,6 +291,8 @@ The Ihara-Grubb transformation is based on concepts from:
 - Graph theory applications to network science
 - Geographic information systems (GIS) for network visualization
 
+**Note:** The name "Ihara" is a reference to Cyberpunk (Cyberpunk 2077).
+
 ## License
 
 See the main project LICENSE file for license information.
